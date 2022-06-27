@@ -1,0 +1,12 @@
+.slide-container img {
+    width: 100%;
+    height: 22rem;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+}
+
+.react-slideshow-container .default-nav{
+    padding: 9px;
+    background: var(--white);
+}
