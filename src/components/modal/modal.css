@@ -1,11 +1,10 @@
-@import url("../../theme/colors.css");
-
 .modal {
     display: grid;
-    width: 100%;
+    width: calc(100% - 5%);
     position: fixed;
-    top: 15%;
-    z-index: 5;
+    top: 12%;
+    left: calc(98% - 95.5%);
+    z-index: 15;
     background: var(--white);
     border-radius: 5px;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
@@ -23,8 +22,8 @@
 
 .modal-body {
     display: grid;
-    justify-content: center;
     align-items: center;
+    text-align: center;
     height: 30vh;
     gap: 1rem;
     color: var(--dark-grayish-blue);
