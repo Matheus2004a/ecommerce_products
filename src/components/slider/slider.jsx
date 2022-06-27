@@ -7,14 +7,31 @@ import product4 from "../../images/image-product-4.jpg"
 import "./slider.css"
 
 const SlideProducts = () => {
-    const slideImages = [product1, product2, product3, product4]
+    const slideImages = [
+        {
+            prod: product1,
+            description: "image-product-1"
+        },
+        {
+            prod: product2,
+            description: "image-product-2"
+        },
+        {
+            prod: product3,
+            description: "image-product-3"
+        },
+        {
+            prod: product4,
+            description: "image-product-4"
+        }
+    ]
 
     return (
         <div className="slide-container">
             <Slide>
                 {slideImages.map((slideImage, index) => (
                     <div className="each-slide" key={index}>
-                        <img src={slideImage}>
+                        <img src={slideImage.prod} alt={slideImage.description}>
                         </img>
                     </div>
                 ))}

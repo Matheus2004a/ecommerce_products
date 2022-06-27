@@ -6,7 +6,8 @@
     background-size: cover;
 }
 
-.react-slideshow-container .default-nav{
+.react-slideshow-container .default-nav {
     padding: 9px;
     background: var(--white);
+    z-index: 5;
 }
