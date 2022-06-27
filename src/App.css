@@ -8,8 +8,24 @@
 }
 
 header {
+  position: relative;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+header figure {
+  position: absolute;
+  left: 15%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -22,7 +38,6 @@ nav {
   background: var(--white);
   transition: all 0.5s;
   animation: .5s linear slider-nav;
-  z-index: 10;
 }
 
 @keyframes slider-nav {
@@ -86,16 +101,8 @@ button,
   height: 2rem;
 }
 
-.section-thumb {
-  position: relative;
-}
-
 .image-thumb {
   width: 100%;
-}
-
-.section-thumb :is(.arrow-left, .arrow-right) {
-  background: var(--white);
 }
 
 main {
@@ -118,17 +125,6 @@ section h2 {
 
 section p {
   color: var(--dark-grayish-blue);
-}
-
-.row-arrows {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 1rem;
-}
-
-.row-arrows img {
-  padding: 1rem;
-  clip-path: circle();
 }
 
 header,
