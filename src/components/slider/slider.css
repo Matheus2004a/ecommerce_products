@@ -7,7 +7,16 @@
 }
 
 .react-slideshow-container .default-nav {
+    position: relative;
     padding: 9px;
     background: var(--white);
     z-index: 5;
+}
+
+.react-slideshow-container .default-nav:first-child {
+    left: 1rem;
+}
+
+.react-slideshow-container .default-nav:last-child {
+    right: 1rem;
 }
