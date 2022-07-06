@@ -9,13 +9,17 @@
 
 header {
   position: relative;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   border-bottom: 1px solid var(--light-grayish-blue);
 }
 
-header figure {
-  position: absolute;
-  left: 15%;
+.content-brand {
+  display: flex;
+  gap: 1rem;
+}
+
+.slide-container .photos-slide {
+  display: none;
 }
 
 .backdrop {
@@ -38,6 +42,7 @@ nav {
   background: var(--white);
   transition: all 0.5s;
   animation: .5s linear slider-nav;
+  z-index: 10;
 }
 
 @keyframes slider-nav {
@@ -65,6 +70,7 @@ a {
 ul li a {
   color: var(--black);
   font-weight: 700;
+  position: relative;
 }
 
 button,
@@ -98,15 +104,22 @@ button,
 }
 
 .avatar {
+  width: 2rem;
   height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  border: 2px solid var(--orange);
 }
 
 .image-thumb {
   width: 100%;
 }
 
-main {
-  margin: 1rem 1.5rem;
+main section:not(.section-buttons) {
+  margin: 1rem;
 }
 
 section {
