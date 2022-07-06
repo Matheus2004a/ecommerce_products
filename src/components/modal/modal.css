@@ -7,7 +7,7 @@
     z-index: 15;
     background: var(--white);
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    box-shadow: 0.3rem 0.3rem 2rem 0.1rem #cfcfcf;
 }
 
 .modal-header {
@@ -36,7 +36,7 @@
     gap: 1rem;
 }
 
-.modal-body .details-product{
+.modal-body .details-product {
     justify-content: space-between;
 }
 
@@ -55,7 +55,7 @@
     border-radius: 5px;
 }
 
-.modal-body .details-product .icon-delete{
+.modal-body .details-product .icon-delete {
     width: 1rem;
     height: 1.2rem;
 }

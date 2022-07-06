@@ -1,24 +1,50 @@
+import { useState, useEffect } from "react";
+import cartProducts from "../../services/cart";
 import "./modal.css"
+import Button from "../button/button";
 
-export default function ModalCentered(props) {
+const Modal = () => {
+    const [statusCart, setStatusCart] = useState(false)
+    const detailsProd = cartProducts.listItems
+    let totalPrice = 0
+
+    useEffect(() => {
+        detailsProd.length > 0 ? setStatusCart(true) : setStatusCart(false)
+    }, [])
+
+    function deleteProd() {
+        detailsProd.length = 0
+        setStatusCart(false)
+    }
+
     return (
-        <div className="modal"
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
-            <div className="modal-header">
-                <div className="modal-title" id="contained-modal-title-vcenter">
-                    Cart
-                </div>
-            </div>
+        <div className="modal">
+            <header className="modal-header">Cart</header>
             <div className="modal-body">
-                <p>
-                    You cart is empty.
-                </p>
-                {/* <button className="btn-checkout">Checkout</button> */}
+                {!statusCart && <p> You cart is empty.</p>}
+
+                {statusCart && detailsProd.map((item, index) => {
+                    totalPrice = item.price * item.qtd
+
+                    return (
+                        <div className="details-product" key={index}>
+                            <figure>
+                                <img src={item.img} alt={item.img} />
+                                <figcaption>
+                                    {item.name}
+                                    <p>${item.price.toFixed(2)} x {item.qtd} <b>${totalPrice.toFixed(2)}</b></p>
+                                </figcaption>
+                            </figure>
+
+                            <Button event={deleteProd} />
+                        </div>
+                    )
+                }
+                )}
+                {statusCart && <button className="btn-checkout">Checkout</button>}
             </div>
         </div>
     );
 }
+
+export default Modal
