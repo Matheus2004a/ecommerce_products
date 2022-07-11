@@ -43,6 +43,7 @@ nav {
   transition: all 0.5s;
   animation: .5s linear slider-nav;
   z-index: 10;
+  margin-left: 2rem;
 }
 
 @keyframes slider-nav {
@@ -60,7 +61,6 @@ ul {
   align-content: center;
   list-style: none;
   gap: 1.5rem;
-  margin-top: 4rem;
 }
 
 a {
@@ -71,6 +71,25 @@ ul li a {
   color: var(--black);
   font-weight: 700;
   position: relative;
+  transition: color .5s;
+}
+
+ul li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  border-bottom: 3px solid var(--orange);
+}
+
+ul li a:hover::after {
+  width: 100%;
+}
+
+ul li a:hover {
+  color: var(--black);
 }
 
 button,
