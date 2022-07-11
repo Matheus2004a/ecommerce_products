@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import cartProducts from "../../services/cart";
+import iconDelete from "../../icons/icon-delete.svg";
 import "./modal.css"
-import Button from "../button/button";
 
-const Modal = () => {
+const Modal = (props) => {
     const [statusCart, setStatusCart] = useState(false)
     const detailsProd = cartProducts.listItems
     let totalPrice = 0
@@ -36,7 +36,9 @@ const Modal = () => {
                                 </figcaption>
                             </figure>
 
-                            <Button event={deleteProd} />
+                            <button onClick={() => [deleteProd(), props.deleteNotification()]}>
+                                <img src={iconDelete} alt="icon-delete" className="icon-delete" />
+                            </button>
                         </div>
                     )
                 }

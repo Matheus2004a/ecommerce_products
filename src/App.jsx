@@ -48,10 +48,14 @@ function App() {
     setCounterCart(0)
   }
 
+  function removeNotification() {
+    setNotification(false)
+  }
+
   return (
     <div className="App">
 
-      {modalShow && <Modal />}
+      {modalShow && <Modal deleteNotification={removeNotification} />}
 
       <header>
         <div className="content-brand">
@@ -62,33 +66,33 @@ function App() {
           <figure>
             <img src={brand} alt="brand" />
           </figure>
+          
+          <div className="backdrop">
+            <nav className={menu ? "active" : "inactive"}>
+              <button onClick={() => setMenu(false)}>
+                <img src={iconSideBar} alt="icon-nav-bar" />
+              </button>
+
+              <ul>
+                <li>
+                  <a href="">Collections</a>
+                </li>
+                <li>
+                  <a href="">Men</a>
+                </li>
+                <li>
+                  <a href="">Women</a>
+                </li>
+                <li>
+                  <a href="">About</a>
+                </li>
+                <li>
+                  <a href="">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-
-        {menu && <div className="backdrop">
-          <nav>
-            <button onClick={() => setMenu(false)}>
-              <img src={iconSideBar} alt="icon-nav-bar" />
-            </button>
-
-            <ul>
-              <li>
-                <a href="">Collections</a>
-              </li>
-              <li>
-                <a href="">Men</a>
-              </li>
-              <li>
-                <a href="">Women</a>
-              </li>
-              <li>
-                <a href="">About</a>
-              </li>
-              <li>
-                <a href="">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>}
 
         <div className="cart-avatar">
           <figure>
