@@ -32,6 +32,14 @@ header {
   background: rgba(0, 0, 0, 0.5);
 }
 
+.backdrop.hidden {
+  display: none;
+}
+
+.backdrop.show {
+  display: block;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -43,7 +51,6 @@ nav {
   transition: all 0.5s;
   animation: .5s linear slider-nav;
   z-index: 10;
-  margin-left: 2rem;
 }
 
 @keyframes slider-nav {
@@ -61,6 +68,7 @@ ul {
   align-content: center;
   list-style: none;
   gap: 1.5rem;
+  margin-top: 4rem;
 }
 
 a {
@@ -227,6 +235,9 @@ section .button-cart:hover {
 }
 
 @media (min-width: 880px) {
+  .backdrop.hidden:not(ul) {
+    display: block;
+  }
 
   .icon-menu,
   nav button {
@@ -241,6 +252,7 @@ section .button-cart:hover {
     width: 0;
     height: 0;
     padding: 0;
+    margin-left: 2rem;
   }
 
   ul {
