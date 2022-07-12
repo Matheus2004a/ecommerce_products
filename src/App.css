@@ -10,7 +10,6 @@
 header {
   position: relative;
   padding: 1rem;
-  margin: 0 2rem;
   border-bottom: 1px solid var(--light-grayish-blue);
 }
 
