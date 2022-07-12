@@ -115,7 +115,7 @@ function App() {
         <section>
           <h5 className="title-product">Sneaker Company</h5>
 
-          <h2>Fall Limited Edition Sneakers</h2>
+          <h1>Fall Limited Edition Sneakers</h1>
 
           <p>
             These low-profile sneakers are your perfect casual wear companion. Featuring a

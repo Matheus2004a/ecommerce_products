@@ -2,7 +2,7 @@
     display: grid;
     width: calc(100% - 5%);
     position: fixed;
-    top: 12%;
+    top: 13%;
     left: calc(98% - 95.5%);
     z-index: 15;
     background: var(--white);
