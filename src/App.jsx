@@ -67,7 +67,7 @@ function App() {
             <img src={brand} alt="brand" />
           </figure>
 
-          <div className={`backdrop ${menu ? "show" : "hidden"}`}>
+          <div className={`backdrop ${menu ? "show" : "hidden"}`} onClick={() => setMenu(false)}>
             <nav>
               <button onClick={() => setMenu(false)}>
                 <img src={iconSideBar} alt="icon-nav-bar" />
